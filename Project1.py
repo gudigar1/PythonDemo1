@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-#C:\Users\om\Downloads\Automobile_data.csv
 
 print('Hello World')
 df=pd.read_csv(r"C:\Users\om\Downloads\Automobile_data.csv")
@@ -10,11 +9,13 @@ print('-------------------------------------------------------------------------
 print('#1')
 df1=df.drop(range(40,45))
 print(df1.head(50))
+df1.to_csv(r"C:\Users\om\Downloads\ModifiedAutomobile_data.csv",index=False)
 print('---------------------------------------------------------------------------------------------------')
 print('#2')
 df2=pd.DataFrame(df)
 index_names=df2[(df2['company']=='toyota')&(df2['body-style']=='wagon')].index
 df2.drop(index_names,inplace=True)
+df2.to_csv(r"C:\Users\om\Downloads\ChangedAutomobile_data.csv",index=False)
 print(df2.head(60))
 print('---------------------------------------------------------------------------------------------------')
 print('#3')
